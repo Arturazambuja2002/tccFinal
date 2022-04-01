@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #FDFBF9;
+}
+
+header,main{
+  background-color: #FDFBF9;
+}
+a{
+    text-decoration: none;
+    color:#20332c;
+    border: 5px;
+    border-color: black;
+    border-radius: 5px;
+     padding: 5px;
+}
+a:hover{
+    background-color: #98f576;
+    transition: 0.4s;
+}
+body{
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cabecalhoImg{
+    height: 105px;
+    width: 105px;
+    padding: 23px;
+}
+.cabecalho-div-login{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+    padding-right: 3em;
+}
+.cabecalho-div-a{
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+}
+.cabecalhoLogin{
+    background-color: #20332c;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #FDFBF9;
+}
+.cabecalhoLogin:hover{
+    color:#20332c
+}
+.parteAlta{
+    display: flex;
+    gap: 73%;
+    padding: 3.3em;
+}
+.novoprojeto{
+    background-color: #20332c;
+    color: #FDFBF9;
+}
+.novoprojeto:hover{
+    background-color:#98f576;
+    color:#20332c;
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 30px;
+}
+
+.project_card {
+    padding: 1em;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    width: 24%;
+    margin: 0.5%;
+  }
+  
+  .project_card h4 {
+    background-color: #001A23;
+    color: #84D183;
+    padding: 0.4em;
+    margin-bottom: 1.3em;
+    font-size: 1.3em;
+    border-radius: 6px;
+  }
+  
+  .project_card p {
+    color: #7a7a7a;
+    margin-bottom: 1em;
+  }
+  
+  .project_card p span {
+    font-weight: bold;
+  }
+
+  .category_text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .category_text span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 5px;
+  }
+
+  .project_card_actions {
+    margin-top: 1.2em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .project_card_actions a,
+  .project_card_actions button {
+    text-decoration: none;
+    border: none;
+    background-color: #E8F1F2;
+    color: #222;
+    font-size: 0.9em;
+    padding: 0.6em 1em;
+    margin-right: 1em;
+    cursor: pointer;
+    border: 1px solid #222;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .project_card_actions svg {
+    margin-right: 0.5em;
+  }
+  
+  .project_card_actions a:hover,
+  .project_card_actions button:hover {
+    background-color: #B3EFB2;
+    color: #001A23;
+    opacity: 14;
+  }
+  
+
+footer{
+    background-color: #20332c;
+    width: 100%;
+    height: 10%;
+}

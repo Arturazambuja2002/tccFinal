@@ -1,0 +1,133 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #FDFBF9;
+}
+.cabecalho-a, .cabecalhoCadastro, .cabecalhoLogin{
+    text-decoration: none;
+    color:#20332c;
+    border: 5px;
+    border-color: black;
+    border-radius: 5px;
+     padding: 5px;
+}
+.cabecalhoLogin:hover{
+    background-color: #98f576;
+    transition: 0.4s;
+}
+.cabecalhoCadastro:hover{
+  background-color: #98f576;
+  transition: 0.4s;
+}
+.cabecalho-a:hover{
+  background-color: #98f576;
+  transition: 0.4s;
+}
+body{
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cabecalhoImg{
+    height: 105px;
+    width: 105px;
+    padding: 23px;
+}
+.cabecalho-div-login{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+    padding-right: 3em;
+}
+.cabecalho-div-a{
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+}
+.cabecalhoLogin{
+    background-color: #20332c;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #FDFBF9;
+}
+.cabecalhoLogin:hover{
+    color:#20332c
+}
+.parteAlta{
+    display: flex;
+    gap: 73%;
+    padding: 3.3em;
+}
+.novoprojeto{
+    background-color: #20332c;
+    color: #FDFBF9;
+}
+.novoprojeto:hover{
+    background-color:#98f576;
+    color:#20332c;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3.6em;
+  }
+  
+  .card {
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    padding: 30px;
+    margin: 20px;
+    width: 400px;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    color:black
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+  
+  .card p {
+    color: #a3a5ae;
+    font-size: 16px;
+  }
+  
+  .image {
+    float: right;
+    max-width: 64px;
+    max-height: 64px;
+  }
+  .image2{
+      float: right;
+      max-width: 45px;
+      max-height: 45px;
+  }
+  
+  .blue {
+    border-left: 3px solid #4895ff;
+  }
+  
+  .green {
+    border-left: 3px solid #3bb54a;
+  }
+  
+  .red {
+    border-left: 3px solid #b3404a;
+  }
+  
+
+.rodape{
+    background-color: #20332c;
+}

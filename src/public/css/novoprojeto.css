@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #FDFBF9;
+}
+a{
+    text-decoration: none;
+    color:#20332c;
+    border: 5px;
+    border-color: black;
+    border-radius: 5px;
+     padding: 5px;
+}
+a:hover{
+    background-color: #98f576;
+    transition: 0.4s;
+}
+body{
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cabecalhoImg{
+    height: 105px;
+    width: 105px;
+    padding: 23px;
+}
+.cabecalho-div-login{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+    padding-right: 3em;
+}
+.cabecalho-div-a{
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+}
+.cabecalhoLogin{
+    background-color: #20332c;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #FDFBF9;
+}
+.cabecalhoLogin:hover{
+    color:#20332c
+}
+p{
+    color: #7b7b7b;
+}
+
+input, select{
+    border: 2px solid #f0f0f0;
+    display: block;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+}
+
+.botaoProjeto{
+    background-color:#20332c;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.botaoProjeto:hover{
+    background-color: #98f576;
+    color:#20332c;
+    transition: 0.4s;
+}
+.pagina{
+    text-align: center;
+    padding: 2em;
+}
+.formulario{
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 2em;
+    line-height: 3.5;
+}
+
+
+.rodape{
+    background-color: #20332c;
+}
