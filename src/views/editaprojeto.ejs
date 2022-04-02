@@ -19,15 +19,11 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-        <div class="cabecalho-div-login">
-            <%=Usuario.nome%> -->
-            <a href="/sair" class="cabecalhoCadastro">Deslogar</a>
-            <!--<a href="/login" class="cabecalhoLogin">Login</a> -->       
-        </div>
+       
     </header>
     <main class="divMain">
         <div class="parteAlta">
-            <h1>Projeto:</h1>
+            <h1>Projeto: <%=projeto.nome%></h1>
             <button type="submit" class="novoprojeto">Editar projeto</button>
         </div>
         <hr/>
@@ -41,8 +37,8 @@
             
         </div>
     </main>
-    <footer class="rodape">
-        <h1>Capital Cash</h1>
-    </footer>
-</body>
-</html>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <%-include('rodape.ejs')%>

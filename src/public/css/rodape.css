@@ -1,0 +1,57 @@
+footer{
+    background-color:#20332c;
+    height: auto;
+    width: 100vw;
+    font-family:'Red Hat Display', sans-serif;;
+    padding-top: 40px;
+    color:#fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    display: flex;
+    margin: 1rem 0 3rem 0;
+    list-style: none;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    color:#fff;
+}
+.socials a img{
+    font-size:2rem;
+    transition: color 1s ease;
+}
+.socials a:hover img{
+    color:aqua;
+}
+.footer-bottom{
+    background:  #051f15;
+    width:100vw;
+    padding:20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+.footer-bottom span{
+    opacity:0.4;
+    font-weight: 200;
+}

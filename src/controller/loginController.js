@@ -4,6 +4,12 @@ async function abreLogin(req,res) {
     res.render("login.ejs", {"msg": req.flash("msg")})
 }
 
+async function logout(req,res){
+    req.logout()
+    console.log('deslogado')
+    res.redirect('/')
+}
+
 const logar = passport.authenticate("local",{
     successRedirect: "/home",
     failureRedirect: "/login",
@@ -12,5 +18,6 @@ const logar = passport.authenticate("local",{
 
 module.exports = {
     abreLogin,
-    logar
+    logar,
+    logout
 }

@@ -14,6 +14,8 @@ const passport = require('passport');
 const res = require('express/lib/response');
 const usuarioController = require('./controller/usuarioController');
 const projetoController = require('./controller/projetoController');
+const Projeto = require('./model/Projeto');
+const Usuario = require('./model/Usuario');
 
 require('./database/index')
 
@@ -65,9 +67,31 @@ app.get('/contato',function(req, res){
 
 //Projetos
 app.get('/projetos' , autenticacao.autenticacao() ,projetoController.list)
+app.get('/projeto/del/:id', autenticacao.autenticacao(), projetoController.del)
 app.get('/novoprojeto' , autenticacao.autenticacao() ,function(req, res){
-    res.render('novoprojeto.ejs')
+    res.render('novoprojeto.ejs', {Usuario: req.user})
 })
+//app.get('/editarprojeto/<%=projeto.id%>' , autenticacao.autenticacao() ,function(req, res){
+ //   Projeto.findByPk(req.params.id).then(function(projeto){
+   //     res.render('editaprojeto.ejs', {Projeto: projeto})
+    //}
+    //)})
+
+app.get('/editarprojeto', (req,res) =>{
+    res.render('editaprojeto.ejs')
+})
+
+app.get('/perfil',autenticacao.autenticacao() ,function(req, res){
+    res.render('perfil.ejs')
+})
+//app.get('/perfil/<%=usuario.id%>' , autenticacao.autenticacao() ,function(req, res){
+ //   Usuario.findByPk(req.params.id).then(function(projeto){
+ //     res.render('perfil.ejs', {Usuario: usuario})
+  //     }
+   //    )})
+
+    
+
 app.post('/novoprojeto',autenticacao.autenticacao(),projetoController.add)
 
 app.listen(porta)

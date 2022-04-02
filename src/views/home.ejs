@@ -21,10 +21,11 @@
         </div>
         <div class="cabecalho-div-login">
             <%=Usuario.nome%>
-            <a href="/sair" class="cabecalhoCadastro">Deslogar</a>
+            <a href="/login/sair" class="cabecalhoCadastro">Deslogar</a>
             <!--<a href="/login" class="cabecalhoLogin">Login</a> -->       
         </div>
     </header>
+    <main>
     <div class="row">
         <a href="/gastos" class="card green">
           <h2>Gastos</h2>
@@ -41,10 +42,11 @@
           <p>Visualize seu perfil</p>
           <img class="image" src="/img/avatar.svg" alt="" />
         </a>
-        
     </div>
-    <footer class="rodape">
-        <h1>Capital Cash</h1>
-    </footer>
-</body>
-</html>
+    </main>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <%-include('rodape.ejs')%>
+    

@@ -62,11 +62,11 @@ module.exports = {
         }). then(
             () =>{
                 req.flash('msg', 'O projeto foi deletado com sucesso!')
-                res.render('/projetos', {'msg': req.flash('msg')})
+                res.redirect('/projetos')
         },
             (err) => {
                 req.flash('msg', 'Problema ao deletar o projeto!')
-                res.render('/projetos', {'msg': req.flash('msg')}) 
+                res.redirect('/projetos') 
         })
     }
 }

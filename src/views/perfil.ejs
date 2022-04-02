@@ -5,7 +5,7 @@
     <link rel="icon" href="/img/logodark.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/perfil.css">
     <title>Capital Cash</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +19,62 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-        <div class="cabecalho-div-login">
-            <%=Usuario.nome%>
-            <a href="/sair" class="cabecalhoCadastro">Deslogar</a>
-            <!--<a href="/login" class="cabecalhoLogin">Login</a> -->       
-        </div>
+       
     </header>
-    <footer class="rodape">
-        <h1>Capital Cash</h1>
-    </footer>
-</body>
-</html>
+    <main>
+        <div class="wrapper">
+            <div class="left">
+                <h2>Perfil:</h2>
+                <br/>
+                <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100">
+                <h4>Alex William</h4>
+                 <p>UI Developer</p>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h3>Information</h3>
+                    <div class="info_data">
+                         <div class="data">
+                            <h4>Email</h4>
+                            <p>alex@gmail.com</p>
+                         </div>
+                         <div class="data">
+                           <h4>CPF</h4>
+                            <p>0001-213-998761</p>
+                      </div>
+                    </div>
+                </div>
+              
+              <div class="projects">
+                    <h3>Projects</h3>
+                    <div class="projects_data">
+                         <div class="data">
+                            <h4>Recent</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                         </div>
+                         <div class="data">
+                           <h4>Most Viewed</h4>
+                            <p>dolor sit amet.</p>
+                      </div>
+                    </div>
+                </div>
+               
+                <button class="botao">Editar perfil</button>
+                <br/>
+                <br/>
+                <div class="social_media">
+                    <ul>
+                      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+              </div>
+              
+            </div>
+        </div>
+    </main>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <%-include('rodape.ejs')%>

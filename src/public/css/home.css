@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
     font-family: 'Red Hat Display', sans-serif;
-    background-color: #FDFBF9;
+}
+header,main{
+  background-color: #FDFBF9;
 }
 .cabecalho-a, .cabecalhoCadastro, .cabecalhoLogin{
     text-decoration: none;
@@ -126,8 +128,3 @@ body{
   .red {
     border-left: 3px solid #b3404a;
   }
-  
-
-.rodape{
-    background-color: #20332c;
-}

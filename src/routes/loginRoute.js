@@ -7,4 +7,6 @@ routes.get('/', loginController.abreLogin)
 
 routes.post('/', loginController.logar)
 
+routes.get('/sair', loginController.logout)
+
 module.exports = routes
