@@ -63,6 +63,12 @@ body{
     gap: 73%;
     padding: 3.3em;
 }
+.parteAlta1{
+  display: flex;
+  gap: 70%;
+  padding: 3.3em;
+  padding-left: 5em;
+}
 .novoprojeto{
     background-color: #20332c;
     color: #FDFBF9;
@@ -107,6 +113,7 @@ body{
   .category_text {
     display: flex;
     align-items: center;
+    
   }
   
   .category_text span {

@@ -39,7 +39,7 @@
                   <span><%=projeto.categoria %></span> 
                 </p>
                 <div class="project_card_actions">
-                  <a href="/editarprojeto">
+                  <a href="/editarprojeto/<%=projeto.id %>">
                     <img src="/img/editicon.png" /> Editar
                   </a>
                   <a href="/projeto/del/<%=projeto.id %>">
@@ -49,6 +49,10 @@
             </div>
             <%}) %>
           </div>
+          <br/>
+    <br/>
+    <br/>
+    <br/>
     </main>
     <br/>
     <br/>

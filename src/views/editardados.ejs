@@ -23,13 +23,14 @@
     </header>
     <main>
         <div class="pagina">
-            <h1>Crie um novo projeto</h1><br/>
+            <h1>Editar os dados do projeto</h1><br/>
             <p>Adicione um projeto e depois poderá incrementar os serviços</p>
-            <form method="post" class="formulario">
+            <form method="post" action="/salvardados" class="formulario">
+                <input type="hidden" name="id"  value="<%=projeto.id%>"/>
                 <label>Nome do projeto:</label> 
-                <input type="text" name="nome" placeholder="Insira o nome" />
+                <input type="text" name="nome"  value="<%=projeto.nome%>"/>
                 <label>Orçamento do projeto: </label> 
-                <input type="number" name="custo" placeholder="Insira o orçamento" />
+                <input type="number" name="custo" value="<%=projeto.custo%>"/>
                 <label> Selecione a categoria: </label>
                 <select name="categoria">
                     <option>Selecione uma opção</option>
@@ -37,7 +38,7 @@
                     <option value="Planejamento">Planejamento</option>
                 </select>
                 <br/>
-                <input type="submit" class="botaoProjeto" value="Criar Projeto">
+                <input type="submit" class="botaoProjeto" value="Salvar dados">
             </form>
         </div>
         <br/>

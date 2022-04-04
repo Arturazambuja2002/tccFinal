@@ -33,28 +33,38 @@ module.exports = {
     },
     async abreedit(req,res){
         const id = req.params.id
+        console.log(id)
         const projeto = await Projeto.findByPk(id)
 
-        res.render('',{'Projeto':projeto, 'msg':req.flash('msg')})
+        res.render('editaprojeto.ejs',{'projeto':projeto, 'msg':req.flash('msg')})
 
     },
     async edit(req,res){
         const id = req.params.id;
         const projeto = await Projeto.findByPk(id)
-        projeto.nome = req.body.nome;
+        
+                res.render('editardados.ejs', {'projeto':projeto, 'msg': req.flash('msg')})
+    
+    },
+    async salvar(req,res){
+        const id = req.body.id;
+        const projeto = await Projeto.findByPk(id)
+    
+        projeto.nome = req.body.nome
         projeto.custo = req.body.custo
         projeto.categoria = req.body.categoria
+
         projeto.save().then(
             (projeto) =>{
                 req.flash('msg', projeto.nome + 'foi alterado com sucesso!')
-                res.render('', {'Projeto':projeto, 'msg': req.flash('msg')})
+                res.render('editaprojeto.ejs',{'projeto':projeto, 'msg': req.flash('msg')})
             },
             (err) =>{
                 req.flash('msg', 'Problema ao alterar o projeto!')
-                res.render('', {'Projeto':projeto, 'msg': req.flash('msg')})    
-            }
-        )
+                res.render('editardados.ejs')
+            })
     },
+
     async del(req,res){
         const id = req.params.id
         await Projeto.destroy({

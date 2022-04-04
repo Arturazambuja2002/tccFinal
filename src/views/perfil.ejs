@@ -32,34 +32,42 @@
             </div>
             <div class="right">
                 <div class="info">
-                    <h3>Information</h3>
+                    <h3>Informações</h3>
                     <div class="info_data">
+                        <div class="data">
+                            <h4>ID</h4>
+                            <input type="hidden" name="id" value="<%=Usuario.id%>">
+                         </div>
+                         <div class="data">
+                            <h4>Nome</h4>
+                            <input type="text" name="nome" id="nome"
+                                placeholder="Nome do usuário" value="<%=Usuario.nome%>">
+                         </div>
                          <div class="data">
                             <h4>Email</h4>
-                            <p>alex@gmail.com</p>
+                            <input type="email" name="email" id="email"
+                                 placeholder="Email do usuário" value="<%=Usuario.email%>">
                          </div>
                          <div class="data">
                            <h4>CPF</h4>
-                            <p>0001-213-998761</p>
+                           <input type="text" name="cpf" id="cpf"
+                            placeholder="CPF do usuário" value="<%=Usuario.cpf%>">
                       </div>
                     </div>
                 </div>
               
               <div class="projects">
-                    <h3>Projects</h3>
+                    <h3>Projetos</h3>
                     <div class="projects_data">
                          <div class="data">
-                            <h4>Recent</h4>
+                            <h4>Recentes</h4>
                             <p>Lorem ipsum dolor sit amet.</p>
                          </div>
-                         <div class="data">
-                           <h4>Most Viewed</h4>
-                            <p>dolor sit amet.</p>
-                      </div>
+                         <a href="/perfil/edit/:id" class="botao">Editar perfil</a>
                     </div>
                 </div>
                
-                <button class="botao">Editar perfil</button>
+                
                 <br/>
                 <br/>
                 <div class="social_media">
@@ -72,9 +80,10 @@
               
             </div>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </main>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+   
     <%-include('rodape.ejs')%>

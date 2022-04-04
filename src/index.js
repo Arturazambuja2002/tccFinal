@@ -14,8 +14,8 @@ const passport = require('passport');
 const res = require('express/lib/response');
 const usuarioController = require('./controller/usuarioController');
 const projetoController = require('./controller/projetoController');
-const Projeto = require('./model/Projeto');
-const Usuario = require('./model/Usuario');
+const Fundo = require('./model/Fundo')
+
 
 require('./database/index')
 
@@ -71,19 +71,31 @@ app.get('/projeto/del/:id', autenticacao.autenticacao(), projetoController.del)
 app.get('/novoprojeto' , autenticacao.autenticacao() ,function(req, res){
     res.render('novoprojeto.ejs', {Usuario: req.user})
 })
-//app.get('/editarprojeto/<%=projeto.id%>' , autenticacao.autenticacao() ,function(req, res){
- //   Projeto.findByPk(req.params.id).then(function(projeto){
-   //     res.render('editaprojeto.ejs', {Projeto: projeto})
-    //}
-    //)})
+app.get('/editarprojeto/:id' , autenticacao.autenticacao(), projetoController.abreedit)
 
-app.get('/editarprojeto', (req,res) =>{
-    res.render('editaprojeto.ejs')
+app.get('/editardadosprojeto/:id', autenticacao.autenticacao(), projetoController.edit)
+
+app.post('/salvardados', autenticacao.autenticacao(), projetoController.salvar)
+
+app.get('/adicionarfundos' , autenticacao.autenticacao(), (req,res) =>{
+    const {nome, valor, descricao} = req.body
+    Fundo.create({nome,valor,descricao}).then(
+        (fundo) => {
+        req.flash('msg', fundo.nome +  'foi adicionado com sucesso!')
+        res.redirect('/editarprojeto/:id')
+    }, (err) => {
+        req.flash('msg', "Problemas ao adicionar esse fundo!")
+        res.redirect('/adicionarfundos')
+    })
 })
 
 app.get('/perfil',autenticacao.autenticacao() ,function(req, res){
     res.render('perfil.ejs')
 })
+app.get('/perfil/edit/:id',usuarioController.abreedit)
+app.post('perfil/edit/:id',usuarioController.edit)
+
+
 //app.get('/perfil/<%=usuario.id%>' , autenticacao.autenticacao() ,function(req, res){
  //   Usuario.findByPk(req.params.id).then(function(projeto){
  //     res.render('perfil.ejs', {Usuario: usuario})

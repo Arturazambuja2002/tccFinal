@@ -1,0 +1,226 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+}
+header,main{
+    background-color: #FDFBF9;
+  }
+a{
+    text-decoration: none;
+    color:#20332c;
+    border: 5px;
+    border-color: black;
+    border-radius: 5px;
+     padding: 5px;
+}
+a:hover{
+    background-color: #98f576;
+    transition: 0.4s;
+}
+body{
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cabecalhoImg{
+    height: 105px;
+    width: 105px;
+    padding: 23px;
+}
+.divImg1{
+    padding: 2.5em;
+    text-align: center;
+}
+.divImg2{
+    padding: 2em;
+}
+.divImg1-img{
+    width: 100%;
+    height: 90%;
+    max-width: 600px;
+    max-height: 600px;
+}
+.divImg2-img{
+    width: 100%;
+    height: 90%;
+    max-width:450px;
+    max-height:450px;
+    padding: 3em;
+    padding-left: 9em;
+}
+.cabecalho-div-login{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+    padding-right: 3em;
+}
+.cabecalho-div-a{
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+}
+.divMain{
+    display: flex;
+    justify-content: center;
+}
+.cabecalhoLogin{
+    background-color: #20332c;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #FDFBF9;
+}
+.cabecalhoLogin:hover{
+    color:#20332c
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    padding: 20px 60px 30px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .container .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container .content .left-side{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    position: relative;
+  }
+  .content .left-side::before{
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 2px;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #98857E;
+  }
+  .content .left-side .details{
+    margin: 14px;
+    text-align: center;
+  }
+  .content .left-side .details i{
+    font-size: 30px;
+    color: #90562E;
+    margin-bottom: 10px;
+  }
+  .content .left-side .details .topic{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .content .left-side .details .text-one,
+  .content .left-side .details .text-two{
+    font-size: 14px;
+    color: #afafb6;
+  }
+
+  .details img{
+    width: 48px;
+  }
+  
+  
+  .container .content .right-side{
+    width: 75%;
+    margin-left: 75px;
+  }
+  .content .right-side .topic-text{
+    font-size: 23px;
+    font-weight: 600;
+    color:#138313;
+  }
+  .topic{
+    color:#138313;
+  }
+  .right-side .input-box{
+    height: 50px;
+    width: 100%;
+    margin: 12px 0;
+  }
+  .right-side .input-box input,
+  .right-side .input-box textarea{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #F0F1F8;
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+  }
+  .right-side .message-box{
+    min-height: 110px;
+  }
+  .right-side .input-box textarea{
+    padding-top: 6px;
+  }
+  .right-side .button{
+    display: inline-block;
+    margin-top: 12px;
+  }
+  .right-side .button input[type="button"]{
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background:#138313;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .button input[type="button"]:hover{
+    background:#20332c;
+  }
+  @media (max-width: 950px) {
+    .container{
+      width: 90%;
+      padding: 30px 40px 40px 35px ;
+    }
+    .container .content .right-side{
+     width: 75%;
+     margin-left: 55px;
+  }
+  }
+  @media (max-width: 820px) {
+    .container{
+      margin: 40px 0;
+      height: 100%;
+    }
+    .container .content{
+      flex-direction: column-reverse;
+    }
+   .container .content .left-side{
+     width: 100%;
+     flex-direction: row;
+     margin-top: 40px;
+     justify-content: center;
+     flex-wrap: wrap;
+   }
+   .container .content .left-side::before{
+     display: none;
+   }
+   .container .content .right-side{
+     width: 100%;
+     margin-left: 0;
+   }
+  }

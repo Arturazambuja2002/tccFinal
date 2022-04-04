@@ -22,23 +22,50 @@
        
     </header>
     <main class="divMain">
-        <div class="parteAlta">
+        <div class="parteAlta1">
             <h1>Projeto: <%=projeto.nome%></h1>
-            <button type="submit" class="novoprojeto">Editar projeto</button>
+            <a href="/editardadosprojeto/<%=projeto.id%>" class="novoprojeto">Editar projeto</a>
+            </div>
+            <div class="informacoes">
+                <p>Categoria: <%=projeto.categoria%></p>
+                <p>Orçamento total para o projeto: <%=projeto.custo%></p>
+                <p>Orçamento disponível para o projeto:</p>
         </div>
         <hr/>
-        <div class="parteAlta">
-            <h2>Adicione um serviço:</h2>
-            <button type="submit" class="novoprojeto">Adicionar serviço</button>
+        <div class="parteAlta1">
+            <h2>Adicione fundos para conclusão do projeto:</h2>
+            <a href="/adicionarfundos" class="novoprojeto">Adicionar fundos</a>
         </div>
         <hr/>
         <div class="servico">
-            <h1>Serviços:</h1>
+            <h1>Fundos:</h1>
+            <br/>
+            <div class="cards">
+                <% Fundos.forEach((fundo) => { %>
+    
+                
+                <div class="project_card">
+                    <h4><%=fundo.nome %></h4>
+                    <p>
+                      <span>Valor adicionado:</span> R$<%=fundo.valor %>
+                    </p>
+                    <p class="category_text">
+                      <span><%=fundo.descricao %></span> 
+                    </p>
+                    <div class="project_card_actions">
+                      <a href="/projeto/del/<%=projeto.id %>">
+                        <img src="/img/deleteicon.png" />Excluir
+                      </a>                  
+                    </div>
+                </div>
+                <%}) %>
+              </div>
             
         </div>
+        <br/>
+    <br/>
+    <br/>
+    <br/>
     </main>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    
     <%-include('rodape.ejs')%>

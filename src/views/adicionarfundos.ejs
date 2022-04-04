@@ -5,7 +5,7 @@
     <link rel="icon" href="/img/logodark.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/novoprojeto.css">
     <title>Capital Cash</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,15 +19,27 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-        <div class="cabecalho-div-login">
-            <%=Usuario.nome%>
-            <a href="/sair" class="cabecalhoCadastro">Deslogar</a>
-            <!--<a href="/login" class="cabecalhoLogin">Login</a> -->       
+        
+    </header>
+    <main>
+        <div class="pagina">
+            <h1>Adicione um novo fundo para o projeto</h1><br/>
+            <p>Adicione um projeto e depois poderá incrementar os serviços</p>
+            <form method="post" class="formulario">
+                <label>Nome do fundo:</label> 
+                <input type="text" name="nome" placeholder="Insira o nome" />
+                <label>Orçamento que será adicionado desse fundo: </label> 
+                <input type="number" name="valor" placeholder="Insira o orçamento" />
+                <label> Descricao: </label>
+                <input type="text" name="descricao" placeholder="Insira a descrição" />
+                <br/>
+                <input type="submit" class="botaoProjeto" value="Criar Projeto">
+            </form>
         </div>
         <br/>
-    <br/>
-    <br/>
-    <br/>
-    </header>
+        <br/>
+        <br/>
+        <br/>
+    </main>
     
     <%-include('rodape.ejs')%>

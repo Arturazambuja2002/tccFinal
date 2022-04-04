@@ -3,29 +3,22 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-   await queryInterface.createTable('projetos', {
+   await queryInterface.createTable('fundos', {
      id: {
        type: Sequelize.BIGINT,
        primaryKey: true,
        autoIncrement: true,
        allowNull: false
      },
-     usuario_id:{
-      type: Sequelize.INTEGER,
-      allowNull:false,
-      references:{model: 'usuarios', key: 'id'},
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE'
-     },
      nome: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    custo: {
+    valor: {
       type: Sequelize.DOUBLE,
       allowNull: false
     },
-    categoria: {
+    descricao: {
       type: Sequelize.STRING,
       allowNull: false
     },
@@ -43,7 +36,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     
-    await queryInterface.dropTable('projetos');
+    await queryInterface.dropTable('fundos');
      
   }
 };

@@ -47,7 +47,7 @@ module.exports = {
         const id = req.params.id
         const usuario = await Usuario.findByPk(id)
 
-        res.render('',{'Usuario':usuario, 'msg':req.flash('msg')})
+        res.render('perfil.ejs',{'Usuario':usuario, 'msg':req.flash('msg')})
 
     },
     async edit(req,res){
