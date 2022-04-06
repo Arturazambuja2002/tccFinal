@@ -10,6 +10,13 @@ module.exports = {
        autoIncrement: true,
        allowNull: false
      },
+     projeto_id:{
+      type: Sequelize.INTEGER,
+      allowNull:false,
+      references:{model: 'projetos', key: 'id'},
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
+     },
      nome: {
       type: Sequelize.STRING,
       allowNull: false
@@ -40,5 +47,3 @@ module.exports = {
      
   }
 };
-
-

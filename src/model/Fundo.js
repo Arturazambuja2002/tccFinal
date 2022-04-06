@@ -9,6 +9,9 @@ class Fundo extends Model{
 
         },{sequelize,tableName:'fundos'})
     }
+    static associate(models){
+        this.belongsTo(models.Projeto, {foreignKey: 'projeto_id', as: 'donoProjeto'})
+    }
 }
 
 module.exports = Fundo

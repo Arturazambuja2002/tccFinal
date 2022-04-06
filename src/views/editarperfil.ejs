@@ -26,29 +26,30 @@
             <div class="left">
                 <h2>Perfil:</h2>
                 <br/>
-                
-                <h4><%=Usuario.nome%></h4>
-                 
+                <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100">
+                <h4>Alex William</h4>
+                 <p>UI Developer</p>
             </div>
             <div class="right">
+                <form method="post">
                 <div class="info">
                     <h3>Informações</h3>
                     <div class="info_data">
                         <div class="data">
                             <h4>ID</h4>
-                            <p><%=Usuario.id%></p>
+                            <input type="text" name="id" value="<%=Usuario.id%>" readonly>
                          </div>
                          <div class="data">
                             <h4>Nome</h4>
-                            <p><%=Usuario.nome%></p>
+                            <input type="text" name="name" value="<%=Usuario.nome%>">
                          </div>
                          <div class="data">
-                            <h4>Email</h4>
-                            <p><%=Usuario.email%></p>
+                            <h4>CPF</h4>
+                            <input type="text" name="cpf" value="<%=Usuario.cpf%>">
                          </div>
                          <div class="data">
-                           <h4>CPF</h4>
-                           <p><%=Usuario.cpf%></p>
+                           <h4>Email</h4>
+                           <input type="email" name="email" value="<%=Usuario.email%>">
                       </div>
                     </div>
                 </div>
@@ -60,10 +61,10 @@
                             <h4>Recentes</h4>
                             <p>Lorem ipsum dolor sit amet.</p>
                          </div>
-                         <a href="/editarperfil/edit/<%=Usuario.id%>" class="botao">Editar perfil</a>
+                         <input type="submit" value="Salvar dados">
                     </div>
                 </div>
-               
+            </form>
                 
                 <br/>
                 <br/>

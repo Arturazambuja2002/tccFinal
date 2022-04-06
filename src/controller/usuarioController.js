@@ -47,7 +47,7 @@ module.exports = {
         const id = req.params.id
         const usuario = await Usuario.findByPk(id)
 
-        res.render('perfil.ejs',{'Usuario':usuario, 'msg':req.flash('msg')})
+        res.render('editarperfil.ejs',{'Usuario':usuario, 'msg':req.flash('msg')})
 
     },
     async edit(req,res){
@@ -65,12 +65,12 @@ module.exports = {
 
             usuario.save().then(
                 (usuario) =>{
-                    req.flash('msg', usuario.email + 'foi alterado com sucesso!')
-                    res.render('', {'Usuario':usuario, 'msg': req.flash('msg')})
+                    req.flash('msg', usuario.nome + 'foi alterado com sucesso!')
+                    res.redirect('/perfil', {'Usuario':usuario, 'msg': req.flash('msg')})
                 },
                 (err) =>{
                     req.flash('msg', 'Problema ao alterar o usuário!')
-                    res.render('', {'Usuario':usuario, 'msg': req.flash('msg')})    
+                    res.redirect('/perfil', {'Usuario':usuario, 'msg': req.flash('msg')})    
                 }
                 )
             })

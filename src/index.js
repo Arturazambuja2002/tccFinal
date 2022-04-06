@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express();
-var porta = process.env.PORT ||  3000; 
+var porta = process.env.PORT || 3000; 
 var projetoRoute = require('./routes/projetoRoute')
 var usuarioRoute = require('./routes/usuarioRoute')
 var loginRoute = require('./routes/loginRoute')
@@ -14,7 +14,10 @@ const passport = require('passport');
 const res = require('express/lib/response');
 const usuarioController = require('./controller/usuarioController');
 const projetoController = require('./controller/projetoController');
-const Fundo = require('./model/Fundo')
+const gastoController = require('./controller/gastoController')
+const Fundo = require('./model/Fundo');
+const fundoController = require('./controller/fundoController');
+const req = require('express/lib/request');
 
 
 require('./database/index')
@@ -65,6 +68,10 @@ app.get('/contato',function(req, res){
     res.render('contato.ejs')
 })
 
+//Gastos
+app.get('/gastos', autenticacao.autenticacao(), gastoController.list)
+
+
 //Projetos
 app.get('/projetos' , autenticacao.autenticacao() ,projetoController.list)
 app.get('/projeto/del/:id', autenticacao.autenticacao(), projetoController.del)
@@ -77,23 +84,15 @@ app.get('/editardadosprojeto/:id', autenticacao.autenticacao(), projetoControlle
 
 app.post('/salvardados', autenticacao.autenticacao(), projetoController.salvar)
 
-app.get('/adicionarfundos' , autenticacao.autenticacao(), (req,res) =>{
-    const {nome, valor, descricao} = req.body
-    Fundo.create({nome,valor,descricao}).then(
-        (fundo) => {
-        req.flash('msg', fundo.nome +  'foi adicionado com sucesso!')
-        res.redirect('/editarprojeto/:id')
-    }, (err) => {
-        req.flash('msg', "Problemas ao adicionar esse fundo!")
-        res.redirect('/adicionarfundos')
-    })
-})
+app.get('/adicionarfundos' , autenticacao.autenticacao(), fundoController.abreadd)
+app.post('/adicionarfundos' , autenticacao.autenticacao(), fundoController.add)
+app.get('/fundos/del/:id', autenticacao.autenticacao(), fundoController.del)
 
 app.get('/perfil',autenticacao.autenticacao() ,function(req, res){
-    res.render('perfil.ejs')
+    res.render('perfil.ejs', {Usuario:req.user})
 })
-app.get('/perfil/edit/:id',usuarioController.abreedit)
-app.post('perfil/edit/:id',usuarioController.edit)
+app.get('/editarperfil/edit/:id',usuarioController.abreedit)
+app.post('/editarperfil/edit/:id',usuarioController.edit)
 
 
 //app.get('/perfil/<%=usuario.id%>' , autenticacao.autenticacao() ,function(req, res){

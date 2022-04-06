@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+}
+header,main{
+    background-color: #FDFBF9;
+  }
+main{
+      padding: 2em;
+      text-align: center;
+}
+a{
+    text-decoration: none;
+    color:#20332c;
+    border: 5px;
+    border-color: black;
+    border-radius: 5px;
+     padding: 5px;
+}
+a:hover{
+    background-color: #98f576;
+    transition: 0.4s;
+}
+body{
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cabecalhoImg{
+    height: 105px;
+    width: 105px;
+    padding: 23px;
+}
+.divImg1{
+    padding: 2.5em;
+    text-align: center;
+}
+.divImg2{
+    padding: 2em;
+}
+.divImg1-img{
+    width: 100%;
+    height: 90%;
+    max-width: 600px;
+    max-height: 600px;
+}
+.divImg2-img{
+    width: 100%;
+    height: 90%;
+    max-width:450px;
+    max-height:450px;
+    padding: 3em;
+    padding-left: 9em;
+}
+.cabecalho-div-login{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+    padding-right: 3em;
+}
+.cabecalho-div-a{
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+}
+.divMain{
+    display: flex;
+    justify-content: center;
+}
+.cabecalhoLogin{
+    background-color: #20332c;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #FDFBF9;
+}
+.cabecalhoLogin:hover{
+    color:#20332c
+}

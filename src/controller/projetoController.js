@@ -1,10 +1,15 @@
 const Projeto = require('../model/Projeto')
+const Fundo = require('../model/Fundo')
 
 const {Op} = require('sequelize')
+const Usuario = require('../model/Usuario')
 
 module.exports = {
     async list(req,res){
-        const projetos = await Projeto.findAll()
+        const projetos = await Projeto.findAll({where:{
+            usuario_id:req.user.id
+        }})
+        console.log(projetos)
         return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg')})
     },
     async filtro(req,res){
@@ -21,8 +26,10 @@ module.exports = {
         res.render('projetos.ejs',{"Projetos":[],'msg': req.flash('msg')})
     },
     async add(req,res){
+        const usuario_id = req.user.id;
         const {nome, custo, categoria} = req.body
-        await Projeto.create({nome,custo,categoria}).then(
+
+        const projeto = await Projeto.create({nome,custo,categoria,usuario_id}).then(
             (projeto) => {
             req.flash('msg', projeto.nome +  'foi adicionado com sucesso!')
             res.redirect('/projetos')
@@ -30,13 +37,15 @@ module.exports = {
             req.flash('msg', "Problemas ao adicionar o projeto!")
             res.redirect('/novoprojeto')
         })
+        
     },
     async abreedit(req,res){
         const id = req.params.id
         console.log(id)
         const projeto = await Projeto.findByPk(id)
+        const fundo = await Fundo.findAll()
 
-        res.render('editaprojeto.ejs',{'projeto':projeto, 'msg':req.flash('msg')})
+        res.render('editaprojeto.ejs',{'projeto':projeto, 'Fundos':fundo,'msg':req.flash('msg')})
 
     },
     async edit(req,res){
@@ -57,11 +66,11 @@ module.exports = {
         projeto.save().then(
             (projeto) =>{
                 req.flash('msg', projeto.nome + 'foi alterado com sucesso!')
-                res.render('editaprojeto.ejs',{'projeto':projeto, 'msg': req.flash('msg')})
+                res.redirect("/editarprojeto/"+id)
             },
             (err) =>{
                 req.flash('msg', 'Problema ao alterar o projeto!')
-                res.render('editardados.ejs')
+                res.redirect("/editarprojeto/"+id)
             })
     },
 
