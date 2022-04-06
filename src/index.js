@@ -75,16 +75,19 @@ app.get('/gastos', autenticacao.autenticacao(), gastoController.list)
 //Projetos
 app.get('/projetos' , autenticacao.autenticacao() ,projetoController.list)
 app.get('/projeto/del/:id', autenticacao.autenticacao(), projetoController.del)
+
 app.get('/novoprojeto' , autenticacao.autenticacao() ,function(req, res){
     res.render('novoprojeto.ejs', {Usuario: req.user})
 })
+app.post('/novoprojeto',autenticacao.autenticacao(),projetoController.add)
+
 app.get('/editarprojeto/:id' , autenticacao.autenticacao(), projetoController.abreedit)
 
 app.get('/editardadosprojeto/:id', autenticacao.autenticacao(), projetoController.edit)
 
 app.post('/salvardados', autenticacao.autenticacao(), projetoController.salvar)
 
-app.get('/adicionarfundos' , autenticacao.autenticacao(), fundoController.abreadd)
+app.get('/adicionarfundos/:id' , autenticacao.autenticacao(), fundoController.abreadd)
 app.post('/adicionarfundos' , autenticacao.autenticacao(), fundoController.add)
 app.get('/fundos/del/:id', autenticacao.autenticacao(), fundoController.del)
 
@@ -103,6 +106,6 @@ app.post('/editarperfil/edit/:id',usuarioController.edit)
 
     
 
-app.post('/novoprojeto',autenticacao.autenticacao(),projetoController.add)
+
 
 app.listen(porta)

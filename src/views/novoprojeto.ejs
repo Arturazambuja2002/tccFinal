@@ -19,7 +19,11 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-        
+        <div class="cabecalho-div-login">
+            <%=Usuario.nome%>
+            <a href="/login/sair" class="cabecalhoCadastro">Deslogar</a>
+            <!--<a href="/login" class="cabecalhoLogin">Login</a> -->       
+        </div>
     </header>
     <main>
         <div class="pagina">
@@ -27,9 +31,9 @@
             <p>Adicione um projeto e depois poderá incrementar os serviços</p>
             <form method="post" class="formulario">
                 <label>Nome do projeto:</label> 
-                <input type="text" name="nome" placeholder="Insira o nome" />
+                <input required type="text" name="nome" placeholder="Insira o nome" />
                 <label>Orçamento do projeto: </label> 
-                <input type="number" name="custo" placeholder="Insira o orçamento" />
+                <input required type="number" name="custo" placeholder="Insira o orçamento" />
                 <label> Selecione a categoria: </label>
                 <select name="categoria">
                     <option>Selecione uma opção</option>

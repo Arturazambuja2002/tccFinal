@@ -10,7 +10,7 @@ module.exports = {
             usuario_id:req.user.id
         }})
         console.log(projetos)
-        return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg')})
+        return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})
     },
     async filtro(req,res){
         let query = '%' + req.body.filtro + '%'
@@ -45,14 +45,14 @@ module.exports = {
         const projeto = await Projeto.findByPk(id)
         const fundo = await Fundo.findAll()
 
-        res.render('editaprojeto.ejs',{'projeto':projeto, 'Fundos':fundo,'msg':req.flash('msg')})
+        res.render('editaprojeto.ejs',{'projeto':projeto, 'Fundos':fundo,'msg':req.flash('msg'), 'Usuario': req.user})
 
     },
     async edit(req,res){
         const id = req.params.id;
         const projeto = await Projeto.findByPk(id)
         
-                res.render('editardados.ejs', {'projeto':projeto, 'msg': req.flash('msg')})
+                res.render('editardados.ejs', {'projeto':projeto, 'msg': req.flash('msg'), 'Usuario': req.user})
     
     },
     async salvar(req,res){

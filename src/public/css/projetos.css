@@ -60,14 +60,14 @@ body{
 }
 .parteAlta{
     display: flex;
-    gap: 73%;
+    gap: 68%;
     padding: 3.3em;
 }
 .parteAlta1{
   display: flex;
-  gap: 70%;
+  gap: 48%;
   padding: 3.3em;
-  padding-left: 5em;
+  padding-left: 3.3em;
 }
 .novoprojeto{
     background-color: #20332c;
@@ -158,6 +158,11 @@ body{
     color: #001A23;
     opacity: 14;
   }
+.informacoes{
+  padding-left: 3.3em;
+  padding-bottom: 2em;
+}
+
   img{
     width: 30px;
   }

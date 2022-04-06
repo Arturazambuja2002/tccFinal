@@ -26,10 +26,11 @@
             <h1>Adicione um novo fundo para o projeto</h1><br/>
             <p>Adicione um projeto e depois poderá incrementar os serviços</p>
             <form method="post" action="/adicionarfundos" class="formulario">
+                <input type="hidden" name="projeto_id" value="<%=projeto_id%>">
                 <label>Nome do fundo:</label> 
-                <input type="text" name="nome" placeholder="Insira o nome" />
+                <input required type="text" name="nome" placeholder="Insira o nome" />
                 <label>Orçamento que será adicionado desse fundo: </label> 
-                <input type="number" name="valor" placeholder="Insira o orçamento" />
+                <input required type="number" name="valor" placeholder="Insira o orçamento" />
                 <label> Descricao: </label>
                 <input type="text" name="descricao" placeholder="Insira a descrição" />
                 <br/>

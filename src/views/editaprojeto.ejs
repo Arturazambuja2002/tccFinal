@@ -19,10 +19,14 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-       
+        <div class="cabecalho-div-login">
+          <%=Usuario.nome%>
+          <a href="/login/sair" class="cabecalhoCadastro">Deslogar</a>
+          <!--<a href="/login" class="cabecalhoLogin">Login</a> -->       
+      </div>
     </header>
     <main class="divMain">
-        <div class="parteAlta1">
+        <div class="parteAlta">
             <h1>Projeto: <%=projeto.nome%></h1>
             <a href="/editardadosprojeto/<%=projeto.id%>" class="novoprojeto">Editar projeto</a>
             </div>
@@ -34,7 +38,7 @@
         <hr/>
         <div class="parteAlta1">
             <h2>Adicione fundos para conclusão do projeto:</h2>
-            <a href="/adicionarfundos" class="novoprojeto">Adicionar fundos</a>
+            <a href="/adicionarfundos/<%=projeto.id%>" class="novoprojeto">Adicionar fundos</a>
         </div>
         <hr/>
         <div class="servico">
