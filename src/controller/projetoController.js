@@ -46,6 +46,8 @@ module.exports = {
         const fundo = await Fundo.findAll({where:{
             projeto_id:req.params.id
         }})
+        console.log(fundo)
+       
 
         res.render('editaprojeto.ejs',{'projeto':projeto, 'Fundos':fundo,'msg':req.flash('msg'), 'Usuario': req.user})
 

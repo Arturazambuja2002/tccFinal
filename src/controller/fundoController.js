@@ -1,4 +1,6 @@
 const Fundo = require('../model/Fundo')
+const Projeto = require('../model/Projeto')
+
 module.exports = {
     async abreadd(req,res){
         
@@ -24,13 +26,13 @@ module.exports = {
         await Fundo.destroy({
             where:{id:id}
         }). then(
-            () =>{
+            (docs) =>{
                 req.flash('msg', 'O fundo foi deletado com sucesso!')
-                res.redirect('/editarprojeto/'+ projeto.id)
+                res.redirect('/projetos')
         },
             (err) => {
                 req.flash('msg', 'Problema ao deletar o projeto!')
-                res.redirect('/editarprojeto/'+ projeto.id) 
+                res.redirect('/projetos') 
         })
     }
 }

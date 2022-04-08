@@ -74,7 +74,7 @@ app.get('/contato',function(req, res){
 app.get('/projetos' , autenticacao.autenticacao() ,projetoController.list)
 app.get('/projeto/del/:id', autenticacao.autenticacao(), projetoController.del)
 
-app.post('/projetos',projetoController.filtro)
+app.post('/projetos/filtro',projetoController.filtro)
 
 app.get('/novoprojeto' , autenticacao.autenticacao() ,function(req, res){
     res.render('novoprojeto.ejs', {Usuario: req.user})
