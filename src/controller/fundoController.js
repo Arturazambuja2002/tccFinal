@@ -1,5 +1,4 @@
 const Fundo = require('../model/Fundo')
-
 module.exports = {
     async abreadd(req,res){
         
@@ -27,11 +26,11 @@ module.exports = {
         }). then(
             () =>{
                 req.flash('msg', 'O fundo foi deletado com sucesso!')
-                res.redirect('/editarprojeto/:id')
+                res.redirect('/editarprojeto/'+ projeto.id)
         },
             (err) => {
                 req.flash('msg', 'Problema ao deletar o projeto!')
-                res.redirect('/editarprojeto') 
+                res.redirect('/editarprojeto/'+ projeto.id) 
         })
     }
 }

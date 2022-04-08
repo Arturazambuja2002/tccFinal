@@ -59,11 +59,12 @@ p{
 }
 
 input, select{
-    border: 2px solid #f0f0f0;
+    border: 2px solid #d1fad3;
     display: block;
     border-radius: 10px;
     font-size: 14px;
     width: 100%;
+    padding-left: 2em;
     padding: 10px;
 }
 
@@ -87,7 +88,7 @@ input, select{
 }
 .formulario{
     display: block;
-    width: 200px;
+    width: 400px;
     margin: 0 auto;
     padding: 2em;
     line-height: 3.5;

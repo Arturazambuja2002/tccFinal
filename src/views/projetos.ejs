@@ -15,19 +15,23 @@
     <header class="cabecalho">
         <div><img src="/img/logodark.svg" alt="" class="cabecalhoImg"></div>
         <div class="cabecalho-div-a">
-            <a href="/home" class="cabecalho-a">Home</a>
+            <a href="/projetos" class="cabecalho-a">Projetos</a>
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-        <div class="cabecalho-div-login">
-          <%=Usuario.nome%>
-          <a href="/login/sair" class="cabecalhoCadastro">Deslogar</a>
-          <!--<a href="/login" class="cabecalhoLogin">Login</a> -->       
-      </div>
+       
+        
     </header>
     <main class="divMain">
         <div class="parteAlta">
-            <h1>Meus projetos:</h1>
+            <h1>Meus projetos: <div class="search-box">
+              <input class="search-txt" type="text" name="filtro" placeholder="Faça a sua pesquisa">
+              <a class="search-btn" href="/projetos">
+                  <img src="/img/search.svg">
+              </a>
+             
+  
+          </div></h1>
             <a href="/novoprojeto" class="novoprojeto">Criar projeto</a>  
         </div>
             <div class="cards">
@@ -37,10 +41,10 @@
             <div class="project_card">
                 <h4><%=projeto.nome %></h4>
                 <p>
-                  <span>Orçamento:</span> R$<%=projeto.custo %>
+                  <span>Orçamento:</span> R$<%=projeto.custo %>,00 Reais
                 </p>
                 <p class="category_text">
-                  <span><%=projeto.categoria %></span> 
+                  <span></span> <%=projeto.categoria %>
                 </p>
                 <div class="project_card_actions">
                   <a href="/editarprojeto/<%=projeto.id %>">
@@ -57,9 +61,7 @@
     <br/>
     <br/>
     <br/>
+    <br/>
     </main>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
     <%-include('rodape.ejs')%>

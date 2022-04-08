@@ -9,18 +9,18 @@ module.exports = {
         const projetos = await Projeto.findAll({where:{
             usuario_id:req.user.id
         }})
-        console.log(projetos)
         return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})
     },
     async filtro(req,res){
-        let query = '%' + req.body.filtro + '%'
+        let query = '%'+req.body.filtro+'%'
         const projetos = await Projeto.findAll({
             where:{
-                nome:{
-                    [Op.like]: query
-                }
+                nome: {
+                    [Op.like]: query    
+                }    
             }
         })
+        return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})
     },
     async abreprojeto(req,res){
         res.render('projetos.ejs',{"Projetos":[],'msg': req.flash('msg')})
@@ -43,7 +43,9 @@ module.exports = {
         const id = req.params.id
         console.log(id)
         const projeto = await Projeto.findByPk(id)
-        const fundo = await Fundo.findAll()
+        const fundo = await Fundo.findAll({where:{
+            projeto_id:req.params.id
+        }})
 
         res.render('editaprojeto.ejs',{'projeto':projeto, 'Fundos':fundo,'msg':req.flash('msg'), 'Usuario': req.user})
 

@@ -1,7 +1,7 @@
 footer{
     background-color:#20332c;
     height: auto;
-    width: 100vw;
+    
     font-family:'Red Hat Display', sans-serif;;
     padding-top: 40px;
     color:#fff;
@@ -46,7 +46,7 @@ footer{
 }
 .footer-bottom{
     background:  #051f15;
-    width:100vw;
+    
     padding:20px 0;
     text-align: center;
     font-size: 14px;

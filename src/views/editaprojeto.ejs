@@ -5,7 +5,7 @@
     <link rel="icon" href="/img/logodark.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/projetos.css">
+    <link rel="stylesheet" href="/css/editaprojeto.css">
     <title>Capital Cash</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
     <header class="cabecalho">
         <div><img src="/img/logodark.svg" alt="" class="cabecalhoImg"></div>
         <div class="cabecalho-div-a">
-            <a href="/home" class="cabecalho-a">Home</a>
+            <a href="/projetos" class="cabecalho-a">Projetos</a>
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="informacoes">
                 <p>Categoria: <%=projeto.categoria%></p>
-                <p>Orçamento total para o projeto: <%=projeto.custo%></p>
+                <p>Orçamento total para o projeto: R$ <%=projeto.custo%>,00</p>
                 <p>Orçamento disponível para o projeto:</p>
         </div>
         <hr/>
@@ -40,21 +40,18 @@
             <h2>Adicione fundos para conclusão do projeto:</h2>
             <a href="/adicionarfundos/<%=projeto.id%>" class="novoprojeto">Adicionar fundos</a>
         </div>
-        <hr/>
         <div class="servico">
-            <h1>Fundos:</h1>
-            <br/>
             <div class="cards">
                 <% Fundos.forEach((fundo) => { %>
     
                 
                 <div class="project_card">
-                    <h4><%=fundo.nome %></h4>
+                    <h5><%=fundo.nome %></h5>
                     <p>
-                      <span>Valor adicionado:</span> R$<%=fundo.valor %>
+                      Valor adicionado: R$<%=fundo.valor %>   
                     </p>
-                    <p class="category_text">
-                      <span><%=fundo.descricao %></span> 
+                    <p>
+                      Descrição: <%=fundo.descricao %>
                     </p>
                     <div class="project_card_actions">
                       <a href="/fundos/del/<%=fundo.id %>">

@@ -11,7 +11,7 @@ async function logout(req,res){
 }
 
 const logar = passport.authenticate("local",{
-    successRedirect: "/home",
+    successRedirect: "/projetos",
     failureRedirect: "/login",
     failureFlash:true
 })

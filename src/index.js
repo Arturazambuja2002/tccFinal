@@ -14,7 +14,6 @@ const passport = require('passport');
 const res = require('express/lib/response');
 const usuarioController = require('./controller/usuarioController');
 const projetoController = require('./controller/projetoController');
-const gastoController = require('./controller/gastoController')
 const Fundo = require('./model/Fundo');
 const fundoController = require('./controller/fundoController');
 const req = require('express/lib/request');
@@ -68,13 +67,14 @@ app.get('/contato',function(req, res){
     res.render('contato.ejs')
 })
 
-//Gastos
-app.get('/gastos', autenticacao.autenticacao(), gastoController.list)
+
 
 
 //Projetos
 app.get('/projetos' , autenticacao.autenticacao() ,projetoController.list)
 app.get('/projeto/del/:id', autenticacao.autenticacao(), projetoController.del)
+
+app.post('/projetos',projetoController.filtro)
 
 app.get('/novoprojeto' , autenticacao.autenticacao() ,function(req, res){
     res.render('novoprojeto.ejs', {Usuario: req.user})
@@ -91,6 +91,8 @@ app.get('/adicionarfundos/:id' , autenticacao.autenticacao(), fundoController.ab
 app.post('/adicionarfundos' , autenticacao.autenticacao(), fundoController.add)
 app.get('/fundos/del/:id', autenticacao.autenticacao(), fundoController.del)
 
+
+//perfil
 app.get('/perfil',autenticacao.autenticacao() ,function(req, res){
     res.render('perfil.ejs', {Usuario:req.user})
 })
