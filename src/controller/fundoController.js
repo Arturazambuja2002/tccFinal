@@ -4,12 +4,11 @@ const Projeto = require('../model/Projeto')
 module.exports = {
     async abreadd(req,res){
         
-        res.render('adicionarfundos.ejs',{'projeto_id': req.params.id})
+        res.render('adicionarfundos.ejs',{'projeto_id': req.params.id, 'Usuario': req.user})
     },
 
     async add(req,res){
         const {projeto_id,nome, valor, descricao} = req.body
-        console.log(projeto_id,nome, valor, descricao)
         const fundo = await Fundo.create({nome,valor,descricao,projeto_id}).then(
             (fundo) => {
             req.flash('msg', fundo.nome +  'foi adicionado com sucesso!')

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/projetos.css">
+    
     <title>Capital Cash</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,16 +20,33 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-       
-        
+        <div>
+        <%=Usuario.nome%>
+       <button class="dropdown-btn">
+         <div class="bloc-top">
+           <img src="/img/avatar1.svg" alt="perfil">
+          </div>
+          <ul class="bloc-links">
+            <li>
+              <a href="/perfil">Perfil</a>
+            </li>
+            <li>
+              <a href="/login/sair">Sair</a>
+            </li>
+          </ul>
+       </button>
+        </div>
     </header>
     <main class="divMain">
         <div class="parteAlta">
-            <h1>Meus projetos: <div class="search-box">
+            <h1>Meus projetos: 
+              <form method="post" action="/projetos">
+              <div class="search-box">
               <input class="search-txt" type="text" name="filtro" placeholder="Faça a sua pesquisa">
-              <a class="search-btn" href="/projetos">
+              <button class="search-btn" type="submit">
                   <img src="/img/search.svg">
-              </a>
+              </button>
+            </form>
              
   
           </div></h1>
@@ -63,5 +81,31 @@
     <br/>
     <br/>
     </main>
+    <script>
+      const dropdown = document.querySelector('.dropdown-btn');
+      const blocTop = document.querySelector('.bloc-top');
+      const allLinks = document.querySelectorAll('.bloc-links li');
+
+      const allDropHeight = `${dropdown.scrollHeight}px`
+      const blocTopHeight = `${blocTop.scrollHeight}px`
+      dropdown.style.height = blocTopHeight;
+
+      dropdown.addEventListener('click', dropAnim);
+
+      let  toggleIndex = false;
+
+      function dropAnim(){
+        toggleIndex ?
+        (
+          dropdown.style.height = blocTopHeight,
+          toggleIndex = false
+        )
+        :
+        (
+          dropdown.style.height = allDropHeight,
+          toggleIndex = true
+        )
+      }
+    </script>
 
     <%-include('rodape.ejs')%>

@@ -60,15 +60,56 @@ body{
 }
 .parteAlta{
     display: flex;
-    gap: 68%;
     padding: 3.3em;
 }
 .parteAlta1{
   display: flex;
-  gap: 48%;
   padding: 3.3em;
   padding-left: 3.3em;
 }
+
+.dropdown-btn{
+  margin-left: 3em;
+  margin-right: 3em;
+   border-radius: 5px;
+   color:#20332c;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   overflow: hidden;
+   transition: height 0.4s ease-in-out;
+   background-color: #f8f8f8ef;
+ }
+ 
+ .bloc-top{
+   padding: 15px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 5px;
+   font-size: 20px;
+ }
+ .bloc-top img{
+   width: 50px;
+ }
+ .bloc-links{
+   
+   list-style-type: none;
+ }
+ .bloc-links li{
+   padding: 5px 0;
+   text-align: left;
+ }
+ .bloc-links a{
+   font-size: 18px;
+   color:#20332c;
+   margin-left: 5px;
+ }
+ .bloc-links li:last-child{
+   padding-bottom: 25px;
+ }
+
 .search-box{
   position: absolute;
   top: 33%;
@@ -112,10 +153,32 @@ body{
 .novoprojeto{
     background-color: #20332c;
     color: #FDFBF9;
+    position: absolute;
+    right: 10%;
+    padding: 0.8em;
 }
 .novoprojeto:hover{
     background-color:#98f576;
     color:#20332c;
+}
+.divBack{
+  background-color:#20332c;
+  color:#98f576;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+}
+.divBack1{
+  background-color:#20332c;
+  color:#98f576;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+  display: flex;
 }
 .cards{
   display: flex;
@@ -200,9 +263,9 @@ body{
     color: #001A23;
     opacity: 14;
   }
-.informacoes{
+.informacoes p{
   padding-left: 3.3em;
-  padding-bottom: 2em;
+  margin-bottom: 20px;
 }
 
   img{

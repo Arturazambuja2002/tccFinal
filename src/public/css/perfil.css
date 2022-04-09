@@ -62,6 +62,47 @@ body{
 .cabecalhoLogin:hover{
     color:#20332c
 }
+.dropdown-btn{
+  margin-left: 3em;
+  margin-right: 3em;
+   border-radius: 5px;
+   color:#20332c;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   overflow: hidden;
+   transition: height 0.4s ease-in-out;
+   background-color: #f8f8f8ef;
+ }
+ 
+ .bloc-top{
+   padding: 15px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 5px;
+   font-size: 20px;
+ }
+ .bloc-top img{
+   width: 50px;
+ }
+ .bloc-links{
+   
+   list-style-type: none;
+ }
+ .bloc-links li{
+   padding: 5px 0;
+   text-align: left;
+ }
+ .bloc-links a{
+   font-size: 18px;
+   color:#20332c;
+   margin-left: 5px;
+ }
+ .bloc-links li:last-child{
+   padding-bottom: 25px;
+ }
 
 .wrapper{
    padding-top: 3em;

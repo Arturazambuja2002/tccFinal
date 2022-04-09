@@ -17,7 +17,7 @@ module.exports = {
             where:{
                 nome: {
                     [Op.like]: query    
-                }    
+                }   
             }
         })
         return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})
@@ -46,10 +46,11 @@ module.exports = {
         const fundo = await Fundo.findAll({where:{
             projeto_id:req.params.id
         }})
-        console.log(fundo)
-       
-
-        res.render('editaprojeto.ejs',{'projeto':projeto, 'Fundos':fundo,'msg':req.flash('msg'), 'Usuario': req.user})
+        var valortotal = 0;
+        fundo.forEach(function(f){
+            valortotal = valortotal+f.valor
+        })
+        res.render('editaprojeto.ejs',{'projeto':projeto, 'valortotal':valortotal, 'Fundos':fundo,'msg':req.flash('msg'), 'Usuario': req.user})
 
     },
     async edit(req,res){

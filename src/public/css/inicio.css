@@ -71,6 +71,7 @@ body{
 .divMain{
     display: flex;
     justify-content: center;
+    padding-bottom: 5em;
 }
 .cabecalhoLogin{
     background-color: #20332c;
