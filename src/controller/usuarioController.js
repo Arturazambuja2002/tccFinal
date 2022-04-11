@@ -1,12 +1,15 @@
 const Usuario = require('../model/Usuario')
+const Projeto = require('../model/Projeto')
 var bcrypt = require('bcrypt')
 
 const {Op} = require('sequelize')
 
 module.exports = {
     async list(req,res){
-        const usuarios = await Usuario.findAll()
-        return res.render('', {'Usuarios':usuarios, 'msg': req.flash('msg')})
+        const projetos = await Projeto.findAll({where:{
+            usuario_id:req.user.id
+        }})
+        return res.render('perfil.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})
     },
     async filtro(req,res){
         let query = '%' + req.body.filtro + '%'
@@ -46,23 +49,20 @@ module.exports = {
     async abreedit(req,res){
         const id = req.params.id
         const usuario = await Usuario.findByPk(id)
+        const projetos = await Projeto.findAll({where:{
+            usuario_id:req.user.id
+        }})
 
-        res.render('editarperfil.ejs',{'Usuario':usuario, 'msg':req.flash('msg')})
+        res.render('editarperfil.ejs',{'Usuario':usuario, 'Projetos': projetos, 'msg':req.flash('msg')})
 
     },
     async edit(req,res){
         const id = req.params.id;
         const usuario = await Usuario.findByPk(id)
-        var senha = req.body.senha
-
-        bcrypt.genSalt(10, function(err, salt) {
-            bcrypt.hash(senha, salt, function(err, hash){
-                senha = hash
-                usuario.nome = req.body.nome
-                usuario.cpf = req.body.cpf
-                usuario.email = req.body.email
-                usuario.senha = senha
-
+    
+        usuario.nome = req.body.nome
+        usuario.cpf = req.body.cpf
+        usuario.email = req.body.email
             usuario.save().then(
                 (usuario) =>{
                     req.flash('msg', usuario.nome + 'foi alterado com sucesso!')
@@ -72,11 +72,7 @@ module.exports = {
                     req.flash('msg', 'Problema ao alterar o usuário!')
                     res.redirect('/perfil', {'Usuario':usuario, 'msg': req.flash('msg')})    
                 }
-                )
-            })
-        })
-
-        
+                )       
     },
     async del(req,res){
         const id = req.params.id

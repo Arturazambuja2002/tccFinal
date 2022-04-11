@@ -41,7 +41,7 @@
             <div class="left">
                 <h2>Perfil:</h2>
                 <br/>
-                
+                <img class="img" src="/img/user.svg">
                 <h4><%=Usuario.nome%></h4>
                  
             </div>
@@ -69,26 +69,19 @@
                 </div>
               
               <div class="projects">
-                    <h3>Projetos</h3>
+                    <h3>Meus projetos</h3>
                     <div class="projects_data">
                          <div class="data">
-                            <h4>Recentes</h4>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            
+                            <div>
+                            <%Projetos.forEach((projeto) => { %>
+                              <h4><%=projeto.nome %></h4>
+                            <%}) %>
+                          </div>
                          </div>
-                         <a href="/editarperfil/edit/<%=Usuario.id%>" class="botao">Editar perfil</a>
+                         <a href="/editarperfil/edit/<%=Usuario.id%>" class="botaoSalvar">Editar perfil</a>
                     </div>
                 </div>
-               
-                
-                <br/>
-                <br/>
-                <div class="social_media">
-                    <ul>
-                      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                  </ul>
-              </div>
               
             </div>
         </div>

@@ -14,8 +14,9 @@ const passport = require('passport');
 const res = require('express/lib/response');
 const usuarioController = require('./controller/usuarioController');
 const projetoController = require('./controller/projetoController');
-const Fundo = require('./model/Fundo');
 const fundoController = require('./controller/fundoController');
+const contatoController = require('./controller/contatoController.js')
+const Projeto = require('./model/Projeto')
 const req = require('express/lib/request');
 
 
@@ -63,9 +64,9 @@ app.get('/home', autenticacao.autenticacao(),function(req, res){
 app.get('/sobre',function(req, res){
     res.render('sobre.ejs')
 })
-app.get('/contato',function(req, res){
-    res.render('contato.ejs')
-})
+app.get('/contato', contatoController.abrecontato)
+
+app.post('/contato', contatoController.add)
 
 
 
@@ -93,21 +94,9 @@ app.get('/fundos/del/:id', autenticacao.autenticacao(), fundoController.del)
 
 
 //perfil
-app.get('/perfil',autenticacao.autenticacao() ,function(req, res){
-    res.render('perfil.ejs', {Usuario:req.user})
-})
+app.get('/perfil',autenticacao.autenticacao() , usuarioController.list)
 app.get('/editarperfil/edit/:id',usuarioController.abreedit)
-app.post('/editarperfil/edit/:id',usuarioController.edit)
-
-
-//app.get('/perfil/<%=usuario.id%>' , autenticacao.autenticacao() ,function(req, res){
- //   Usuario.findByPk(req.params.id).then(function(projeto){
- //     res.render('perfil.ejs', {Usuario: usuario})
-  //     }
-   //    )})
-
-    
-
+app.post('/perfil',usuarioController.edit)
 
 
 app.listen(porta)

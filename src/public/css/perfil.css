@@ -108,12 +108,11 @@ body{
    padding-top: 3em;
    display: flex;
    padding: 3em;
-   height: 550px;
   }
-  
+ 
   .wrapper .left{
-    width: 35%;
-    background: linear-gradient(to right,#01a9ac,#01dbdf);
+    width: 25%;
+    background: linear-gradient(to right,#0b5701,#98f576);
     padding: 30px 25px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -161,6 +160,7 @@ body{
   .wrapper .right .projects_data{
     display: flex;
     justify-content: space-between;
+    gap:40px
   }
   
   .wrapper .right .info_data .data,
@@ -181,22 +181,55 @@ body{
     color: #919aa3;
   }
   
-  .wrapper .social_media ul{
-    display: flex;
-  }
-  
-  .wrapper .social_media ul li{
-    width: 45px;
-    height: 45px;
-    background: linear-gradient(to right,#01a9ac,#01dbdf);
-    margin-right: 10px;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 45px;
-  }
-  
-  .wrapper .social_media ul li a{
-    color :#fff;
+  input{
+    border: 2px solid #d1fad3;
     display: block;
-    font-size: 18px;
-  }
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    padding-left: 2em;
+    padding: 10px;
+}
+.botaoSalvar {
+  appearance: none;
+  background-color: transparent;
+  border: 0.125em solid #1A1A1A;
+  border-radius: 0.9375em;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 3.75em;
+  min-width: 0;
+  outline: none;
+  padding: 1em 2.3em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+ }
+ 
+ .botaoSalvar:disabled {
+  pointer-events: none;
+ }
+ .botaoSalvar:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+ }
+ .botaoSalvar:active {
+  box-shadow: none;
+  transform: translateY(0);
+ }
+ .img{
+   height: 200px;
+ }

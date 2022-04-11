@@ -38,15 +38,15 @@
     </header>
     <main>
         <div class="wrapper">
-            <div class="left">
-                <h2>Perfil:</h2>
-                <br/>
-                <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100">
-                <h4>Alex William</h4>
-                 <p>UI Developer</p>
-            </div>
+          <div class="left">
+            <h2>Perfil:</h2>
+            <br/>
+            <img class="img" src="/img/user.svg">
+            <h4><%=Usuario.nome%></h4>
+             
+        </div>
             <div class="right">
-                <form method="post">
+                <form method="post" action="/perfil">
                 <div class="info">
                     <h3>Informações</h3>
                     <div class="info_data">
@@ -56,7 +56,7 @@
                          </div>
                          <div class="data">
                             <h4>Nome</h4>
-                            <input type="text" name="name" value="<%=Usuario.nome%>">
+                            <input type="text" name="nome" value="<%=Usuario.nome%>">
                          </div>
                          <div class="data">
                             <h4>CPF</h4>
@@ -70,27 +70,20 @@
                 </div>
               
               <div class="projects">
-                    <h3>Projetos</h3>
+                    <h3>Meus projetos</h3>
                     <div class="projects_data">
                          <div class="data">
-                            <h4>Recentes</h4>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            
+                            <% Projetos.forEach((projeto) => { %>
+                              <h4><%=projeto.nome %></h4>
+                            <%}) %>
                          </div>
-                         <input type="submit" value="Salvar dados">
+                         <button class="botaoSalvar" type="submit">Salvar dados</button>
                     </div>
+                    
                 </div>
             </form>
-                
-                <br/>
-                <br/>
-                <div class="social_media">
-                    <ul>
-                      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                  </ul>
-              </div>
-              
+             
             </div>
         </div>
         <br/>
