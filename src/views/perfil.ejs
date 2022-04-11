@@ -19,7 +19,7 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-        <div>
+        <div style="height:100px">
             <%=Usuario.nome%>
            <button class="dropdown-btn">
              <div class="bloc-top">
@@ -73,7 +73,7 @@
                     <div class="projects_data">
                          <div class="data">
                             
-                            <div>
+                            <div class="listProjeto">
                             <%Projetos.forEach((projeto) => { %>
                               <h4><%=projeto.nome %></h4>
                             <%}) %>

@@ -57,20 +57,20 @@ module.exports = {
 
     },
     async edit(req,res){
-        const id = req.params.id;
+        const id = req.body.id;
         const usuario = await Usuario.findByPk(id)
-    
+        
         usuario.nome = req.body.nome
         usuario.cpf = req.body.cpf
         usuario.email = req.body.email
             usuario.save().then(
                 (usuario) =>{
                     req.flash('msg', usuario.nome + 'foi alterado com sucesso!')
-                    res.redirect('/perfil', {'Usuario':usuario, 'msg': req.flash('msg')})
+                    res.redirect('/perfil')
                 },
                 (err) =>{
                     req.flash('msg', 'Problema ao alterar o usuário!')
-                    res.redirect('/perfil', {'Usuario':usuario, 'msg': req.flash('msg')})    
+                    res.redirect('/perfil')    
                 }
                 )       
     },

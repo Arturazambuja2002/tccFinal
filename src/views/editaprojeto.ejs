@@ -19,7 +19,7 @@
             <a href="/sobre" class="cabecalho-a">Sobre nós</a>
             <a href="/contato" class="cabecalho-a">Contato</a>
         </div>
-        <div>
+        <div style="height:100px">
           <%=Usuario.nome%>
          <button class="dropdown-btn">
            <div class="bloc-top">
@@ -38,13 +38,13 @@
     </header>
     <main class="divMain">
         <div class="parteAlta">
-            <h1 class="divBack">Projeto: <h1>&nbsp <%=projeto.nome%></h1></h1>
+            <h1 class="divBack">Projeto:<h1 class="divProjeto">&nbsp<%=projeto.nome%></h1></h1>
             <a href="/editardadosprojeto/<%=projeto.id%>" class="novoprojeto">Editar projeto</a>
             </div>
             <div class="informacoes">
-                <p >Categoria: <%=projeto.categoria%></p>
-                <p >Orçamento total para o projeto: R$ <%=projeto.custo%>,00</p>
-                <p >Orçamento disponível para o projeto: R$ <%=valortotal%>,00</p>
+                <p>Categoria: <%=projeto.categoria%></p>
+                <p>Orçamento total para o projeto: R$ <%=projeto.custo%>,00</p>
+                <p>Orçamento disponível para o projeto: R$ <%=valortotal%>,00</p>
         </div>
         <hr/>
         <div class="parteAlta1">

@@ -17,7 +17,8 @@ module.exports = {
             where:{
                 nome: {
                     [Op.like]: query    
-                }   
+                }
+                
             }
         })
         return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})

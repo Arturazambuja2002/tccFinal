@@ -168,7 +168,7 @@ body{
   padding-bottom: 3px;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 6px;
+  border-radius: 6px 0px 0px 6px;
 }
 .divBack1{
   background-color:#20332c;
@@ -270,5 +270,14 @@ body{
 
   img{
     width: 20px;
+  }
+  .divProjeto{
+  background-color:#20332c;
+  color:#ffffff;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 0px 6px 6px 0px;
   }
 

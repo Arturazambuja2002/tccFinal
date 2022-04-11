@@ -45,14 +45,14 @@ body{
 .divImg1-img{
     width: 100%;
     height: 90%;
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 500px;
+    max-height: 400px;
 }
 .divImg2-img{
     width: 100%;
     height: 90%;
-    max-width:450px;
-    max-height:450px;
+    max-width:400px;
+    max-height:300px;
     padding: 3em;
     padding-left: 9em;
 }
