@@ -60,11 +60,11 @@
                          </div>
                          <div class="data">
                             <h4>CPF</h4>
-                            <input type="text" name="cpf" value="<%=Usuario.cpf%>">
+                            <input type="text" name="cpf" value="<%=Usuario.cpf%>" readonly>
                          </div>
                          <div class="data">
                            <h4>Email</h4>
-                           <input type="email" name="email" value="<%=Usuario.email%>">
+                           <input type="email" name="email" value="<%=Usuario.email%>" readonly>
                       </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                          <div class="data">
                             
                             <% Projetos.forEach((projeto) => { %>
-                              <h4><%=projeto.nome %></h4>
+                              <h4>- <%=projeto.nome %></h4>
                             <%}) %>
                          </div>
                          <button class="botaoSalvar" type="submit">Salvar dados</button>

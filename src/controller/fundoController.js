@@ -17,7 +17,7 @@ module.exports = {
         fundos.forEach(function(f){
             valortotal = valortotal+f.valor
         })
-        if(projeto.custo>=valortotal+valor ){
+        if(projeto.custo>=valortotal+valor){
             const fundo = await Fundo.create({nome,valor,descricao,projeto_id}).then(
                 (fundo) => {
                 req.flash('msg', fundo.nome +  'foi adicionado com sucesso!')

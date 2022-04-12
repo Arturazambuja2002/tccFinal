@@ -62,7 +62,7 @@ app.get('/home', autenticacao.autenticacao(),function(req, res){
     res.render('home.ejs',{Usuario: req.user})
 })
 app.get('/sobre',function(req, res){
-    res.render('sobre.ejs')
+    res.render('sobre.ejs',{Usuario: req.user})
 })
 app.get('/contato', contatoController.abrecontato)
 

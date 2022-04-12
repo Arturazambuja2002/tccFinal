@@ -3,7 +3,7 @@ exports.autenticacao = function autenticacao(){
         if(req.isAuthenticated()){
             return next()
         }
-        req.flash('msg', "Você deve logar-se primeiro para acessar esse link!")
+        req.flash('msg', "Você deve logar primeiro para acessar esse link!")
         res.redirect("/login")
     }
 }

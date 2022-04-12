@@ -29,20 +29,22 @@ footer{
     display: flex;
     margin: 1rem 0 3rem 0;
     list-style: none;
+    height: 20px;
 }
 .socials li{
-    margin: 0 10px;
+    margin: 0 14px;
 }
-.socials a{
-    color:#fff;
+.socials li img{
+    height: 30px;
+    cursor: pointer;
 }
-.socials a img{
-    font-size:2rem;
-    transition: color 1s ease;
+.termos{
+    display: flex;
+    padding-bottom: 1em;
+    gap:20px;
+    cursor: pointer;
 }
-.socials a:hover img{
-    color:aqua;
-}
+
 .footer-bottom{
     background:  #051f15;
     

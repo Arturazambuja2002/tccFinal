@@ -53,9 +53,12 @@
         </div>
         <div class="servico">
             <div class="cards">
+              <% if(Fundos == ""){%>
+                <h3>Não há fundos para o projeto</h3>
+              <%}else{%>
+
                 <% Fundos.forEach((fundo) => { %>
     
-                
                 <div class="project_card">
                     <h5><%=fundo.nome %></h5>
                     <p>
@@ -70,10 +73,11 @@
                       </a>                  
                     </div>
                 </div>
-                <%}) %>
+                <%})} %>
               </div>
             
         </div>
+        <h3><%=msg%></h3>
         <br/>
     <br/>
     <br/>

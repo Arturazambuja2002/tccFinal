@@ -95,9 +95,6 @@ header, main{
    .bloc-links li:last-child{
      padding-bottom: 25px;
    }
-p{
-    color: #7b7b7b;
-}
 
 input, select{
     border: 2px solid #d1fad3;
@@ -126,6 +123,9 @@ input, select{
 .pagina{
     text-align: center;
     padding: 2em;
+}
+.pagina p{
+    color: #7b7b7b;
 }
 .formulario{
     display: block;

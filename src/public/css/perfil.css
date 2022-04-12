@@ -6,6 +6,7 @@
 header,main{
   background-color: #FDFBF9;
 }
+
 .cabecalho-a, .cabecalhoCadastro, .cabecalhoLogin{
     text-decoration: none;
     color:#20332c;
@@ -234,6 +235,6 @@ body{
    height: 200px;
  }
 
- .listProjeto {
+ .listProjeto h4{
    color: #7a7a7a;
  }

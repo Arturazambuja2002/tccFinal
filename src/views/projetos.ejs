@@ -53,6 +53,10 @@
             <a href="/novoprojeto" class="novoprojeto">Criar projeto</a>  
         </div>
             <div class="cards">
+              
+              <%if(Projetos == ""){ %>
+                <h3>Não há projetos cadastrados</h3>
+              <%}else{%>
             <% Projetos.forEach((projeto) => { %>
 
             
@@ -73,7 +77,7 @@
                   </a>                  
                 </div>
             </div>
-            <%}) %>
+            <%})} %>
           </div>
           <br/>
     <br/>

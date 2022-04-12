@@ -72,10 +72,6 @@ body{
     flex-direction: row;
     gap:35px;
 }
-.divMain{
-    display: flex;
-    justify-content: center;
-}
 .cabecalhoLogin{
     background-color: #20332c;
     padding-left: 1.5em;
@@ -85,3 +81,31 @@ body{
 .cabecalhoLogin:hover{
     color:#20332c
 }
+
+.wrapper .left{
+    width: 32%;
+    float: left;
+    background: linear-gradient(to right,#0b5701,#98f576);
+    padding: 30px 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    color: #fff;
+  }
+  .wrapper .left img{
+    height: 300px;
+    width: 400px;
+  }
+  .wrapper .right{
+    width: 65%;
+    float: right;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  main{
+    display: flex
+  }
+  .p{
+      color:#7b7b7b;
+      font-size: small;
+  }
