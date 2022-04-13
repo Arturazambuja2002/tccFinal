@@ -12,13 +12,13 @@ module.exports = {
         return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})
     },
     async filtro(req,res){
-        let query = '%'+req.body.filtro+'%'
+        let query = `%${req.body.filtro}%`
+        
         const projetos = await Projeto.findAll({
             where:{
                 nome: {
-                    [Op.like]: query    
+                    [Op.iLike]: query    
                 }
-                
             }
         })
         return res.render('projetos.ejs', {'Projetos':projetos, 'msg': req.flash('msg'), 'Usuario': req.user})

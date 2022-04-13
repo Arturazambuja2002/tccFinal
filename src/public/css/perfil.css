@@ -238,3 +238,10 @@ body{
  .listProjeto h4{
    color: #7a7a7a;
  }
+.projects a{
+  float: right;
+
+}
+.projects button{
+  float: right;
+}
